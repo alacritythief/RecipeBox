@@ -1,0 +1,15 @@
+<h1 id="recipebox"><img id="logo" src="/recipebox_logo.gif">RecipeBox</h1>
+<h2><%= @recipe[0]["name"] %></h2>
+
+<p class="title">Ingredients:</p>
+
+<ol>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient["name"] %></li>
+  <% end %>
+</ol>
+  <% @recipe.each do |recipe| %>
+    <%= recipe["instructions"].gsub(/(?:\n\r?|\r\n?)/, '<br>') %>
+  <% end %>
+
+<p><a href="/recipes"><< Back to Recipe List</a></p>
